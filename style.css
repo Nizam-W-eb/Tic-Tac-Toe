@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'Sour Gummy';
+    src: url('font/SourGummy-VariableFont_wdth\,wght.ttf');
+    font-style: normal;
+    font-display: swap;
+}
+
+*{
+    font-family: "Sour Gummy",sans-serif ;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --background-color: #87D3F8;
+    --font-color:#EE9B00;
+    --shadow: 3px 3px 2px black;
+}
+
+#home-page{
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-color);
+    color: var(--font-color);
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 70px;
+}
+
+.title-name{
+    font-size: clamp(50px,9vw,100px);
+    font-weight:700px;
+    -webkit-text-stroke:max(.05rem, 2px) black;
+    text-shadow: var(--shadow);
+}
+
+
+.start-button{
+    all: unset;
+    padding: 1rem;
+    border-radius: 45px;
+    
+    font-size:clamp(30px,5vw,50px);
+    background-color: #111827;
+    color: white;
+
+    box-shadow:var(--shadow);
+}
+
+.start-button:hover{
+    box-shadow: none;
+}
