@@ -111,3 +111,42 @@ let gameFunction = (() => {
 
     return {winCheck, pointX, pointO}
 })();    
+
+let player = (() => {
+    let playerX = "";
+    let playerO = "";
+})();
+let display = (() => {
+    let homePage = document.querySelector("#home-page");
+    let playerNamePage = document.querySelector("#player-name-page");
+    let gamePage = document.querySelector("#game-page");
+    let winPage = document.querySelector("#win-page");
+
+    let homePageButton = document.querySelector(".start-button");
+
+    homePageButton.addEventListener("click", (a) => {
+        homePage.hidden = true;
+        playerNamePage.hidden = false;
+    });
+
+
+    let playerBtn = document.querySelector(".player-button");
+    let inputX = document.querySelector(".x-text");
+    let inputO = document.querySelector(".o-name").value;
+    let playerX = "";
+    let playerO = "";
+
+    playerBtn.addEventListener("click", () =>{
+        playerX = inputX.value;
+        playerO = inputO.value;
+        if(playerX === "" || playerO === "") {
+            alert("please enter your name!");
+        }
+        else{
+            playerNamePage.hidden = true;
+            gamePage.hidden = false;
+        }
+    })
+})();
+
+

@@ -17,7 +17,11 @@
     --shadow: 3px 3px 2px black;
 }
 
-#home-page{
+[hidden] {
+    display: none !important;
+}
+
+#home-page, #player-name-page, #game-page{
     height: 100vh;
     width: 100vw;
     background-color: var(--background-color);
@@ -53,4 +57,57 @@
 
 .start-button:hover{
     box-shadow: none;
+}
+
+
+.player-title-text, .game-title-text{
+    font-size: clamp(50px,6vw,70px);
+    font-weight:500px;
+    -webkit-text-stroke:max(.05rem, 1px) black;
+    text-shadow: var(--shadow);
+}
+
+
+.player-names{
+    color: #111827;
+    font-size: max(15px, 2vw);
+}
+.x-name, .o-name{
+    all: unset;
+    color: var(--font-color);
+    border: 2px solid black;
+    border-radius: 45px;
+    padding: min(1rem,10px);
+}
+
+.player-names{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: min(20vw, 50px) ;
+
+}
+
+.player-button{
+    all: unset;
+    padding: 1rem;
+    border-radius: 45px;
+    
+    font-size:clamp(30px,4vw,40px);
+    background-color: #111827;
+    color: white;
+
+    box-shadow:var(--shadow);
+}
+
+.player-form{
+    display: flex;
+    flex-direction: column;
+    gap:90px;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-board-text{
+    
 }
