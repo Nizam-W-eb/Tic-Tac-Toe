@@ -31,7 +31,7 @@ let game = (() => {
         console.log(gameArray);
     };
 
-    return {select, consoleArray, array};
+    return {select, consoleArray};
 })();
 
 
@@ -115,6 +115,11 @@ let gameFunction = (() => {
 
     };
 
+    let retry = () => {
+        pointX = 0;
+        pointO = 0;
+        rounds = 1;
+    }
 
     let updateRounds = () => {
         return rounds
@@ -131,7 +136,7 @@ let gameFunction = (() => {
    
 
 
-    return {winCheck, updatePointX, updatePointO, updateRounds}
+    return {winCheck, updatePointX, updatePointO, updateRounds, retry}
 })();    
 
 
@@ -174,7 +179,8 @@ let display = (() => {
     let gameBoard = document.querySelector(".game-board");
     let displayPointX = document.querySelector(".point-x");
     let displayPointO = document.querySelector(".point-o");
-
+    let winPointX = document.querySelector(".win-point-x");
+    let winPointO = document.querySelector(".win-point-o");
 
     let board = (array,symbol) => {
         for(let i = 0 ;i < 9; i++){
@@ -183,23 +189,44 @@ let display = (() => {
             gameTile.innerHTML = array[i];
         };
         gameTurn.innerHTML = symbol + " turn";
-        gameRound.innerHTML = "round " + gameFunction.updateRounds();
+        gameRound.innerHTML = "Round " + gameFunction.updateRounds();
     };
 
-
+    let winName = document.querySelector(".win-page-text");
     gameBoard.addEventListener("click", (a)=>{
         let gameTile = a.target;
         game.select(gameTile.id);
         displayPointX.innerHTML = "point-X: " + gameFunction.updatePointX();
         displayPointO.innerHTML = "point-O: " + gameFunction.updatePointO();
         console.log(gameFunction.updatePointX())
-       if(gameFunction.updatePointX() === 3 || gameFunction.updatePointO() === 3){
+       if(gameFunction.updatePointX() === 3){
+        winName.innerHTML = playerX + " WIN!"
+        winPointX.innerHTML = "point-X: " + gameFunction.updatePointX();
+        winPointO.innerHTML = "point-O: " + gameFunction.updatePointO();
+
+        gamePage.hidden = true;
+        winPage.hidden = false;
+       }
+       else if(gameFunction.updatePointO() === 3){
+        winName.innerHTML = playerO + " WIN!"
+        winPointX.innerHTML = "point-X: " + gameFunction.updatePointX();
+        winPointO.innerHTML = "point-O: " + gameFunction.updatePointO();
+
         gamePage.hidden = true;
         winPage.hidden = false;
        };
         
     });
-     
+ 
+    let retry = document.querySelector(".retry-button");
+    retry.addEventListener("click", (a) => {
+        gameFunction.retry();
+        displayPointX.innerHTML = "Point-X: ";
+        displayPointO.innerHTML = "Point-O: ";
+        gameRound.innerHTML = "Round 1";
+        gamePage.hidden = false;
+        winPage.hidden = true;
+    })
     return {board}
 })();
 

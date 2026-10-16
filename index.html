@@ -7,7 +7,7 @@
     <title>Tic-Tac-Toe</title>
 </head>
 <body>
-    <section id="home-page" hidden>
+    <section id="home-page">
         <div class="title">
             <h1 class="title-name">Tic-Tac-Toe</h1>
         </div>
@@ -39,7 +39,7 @@
     </section>
 
 
-    <section id="game-page">
+    <section id="game-page" hidden>
         <div class="game-title">
             <h1 class="game-title-text">Tic-Tac-Toe</h1>
         </div>
@@ -63,7 +63,18 @@
             <div class="game-round game-board-text">round 1</div>
         </div>
     </section>
-    <section id="win-page" hidden></section>
+    <section id="win-page" hidden>
+        <div class="win-page-div">
+            <p class="win-page-text">You win!!</p>
+        </div>
+        <div class="win-points points">
+            <div class="win-point-x">point-x:</div>
+            <div class="win-point-o">point-o:</div>
+        </div>      
+        <div class="retry">
+            <button class="retry-button">Retry</button>
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>

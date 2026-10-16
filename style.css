@@ -21,7 +21,7 @@
     display: none !important;
 }
 
-#home-page, #player-name-page, #game-page{
+#home-page, #player-name-page, #game-page, #win-page{
     height: 100vh;
     width: 100vw;
     background-color: var(--background-color);
@@ -35,10 +35,13 @@
     gap: 70px;
 }
 
-.title-name{
+#win-page{
+    gap: 10px;
+}
+
+.title-name, .win-page-text{
     font-size: clamp(50px,9vw,100px);
     font-weight:700px;
-    -webkit-text-stroke:max(.05rem, 2px) black;
     text-shadow: var(--shadow);
 }
 
@@ -88,7 +91,7 @@
 
 }
 
-.player-button{
+.player-button, .retry-button{
     all: unset;
     padding: 1rem;
     border-radius: 45px;
@@ -145,9 +148,17 @@
 }
 
 .points{
+    gap: 20px;
     color: #111827;
     font-size: 1.3rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.retry-button{
+    font-size: clamp(20px,3vw,30px);
+}
+.retry{
+    padding-top: max(1rem, 20px);
 }
