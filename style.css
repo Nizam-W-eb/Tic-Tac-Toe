@@ -73,7 +73,7 @@
 
 .player-names{
     color: #111827;
-    font-size: max(15px, 2vw);
+    font-size: min(3vw,25px);
 }
 .x-name, .o-name{
     all: unset;
@@ -84,11 +84,10 @@
 }
 
 .player-names{
+    width: 100vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: min(20vw, 50px) ;
-
 }
 
 .player-button, .retry-button{
