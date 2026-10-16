@@ -109,5 +109,45 @@
 }
 
 .game-board-text{
-    
+    font-size: min(2rem,37px);
+    color: #111827;
+    text-align: center;
+}
+
+.game-board{
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+    border: 1px solid black;
+}
+
+.game-tile{
+    height:100px;
+    width:100px;
+    outline: 1px solid black;
+    font-size: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 5px;
+
+}
+
+.game-tile:hover{
+    opacity:0.8;
+}
+
+.points{
+    color: #111827;
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
